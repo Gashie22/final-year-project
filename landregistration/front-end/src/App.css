@@ -1,0 +1,416 @@
+/* ====== Global Variables & Base Styles ====== */
+:root {
+  --primary: #f6851b;       /* Orange accent */
+  --dark: #0f172a;          /* Dark blue */
+  --light: #f8f9fa;         /* Light text */
+  --success: #28a745;       /* Green */
+  --info: #17a2b8;          /* Teal */
+  --danger: #dc3545;        /* Red */
+  --warning: #ffc107;       /* Yellow */
+  --purple: #6f42c1;        /* Purple */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ====== Shared Component Styles ====== */
+/* Cards */
+.feature-card,
+.land-card,
+.verification-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  height: 100%;
+  will-change: transform;
+}
+
+.feature-card {
+  border-top: 3px solid var(--primary);
+  text-align: center;
+}
+
+.feature-card:hover,
+.land-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.verification-card {
+  border-left: 4px solid var(--success);
+}
+
+/* Icons & Visual Elements */
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: rgba(246, 133, 27, 0.1);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: var(--transition);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
+}
+
+.feature-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--primary);
+  z-index: 1;
+  transform-origin: left center;
+}
+
+/* Blockchain Visualization */
+.blockchain-visualization {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: 200px;
+  position: relative;
+  max-width: 500px;
+  margin: 2rem auto 0;
+}
+
+.blockchain-node {
+  width: 30px;
+  height: 30px;
+  background: var(--primary);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 3px 10px rgba(246, 133, 27, 0.3);
+}
+
+.blockchain-node::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: var(--primary);
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+}
+
+/* ====== Section-Specific Styles ====== */
+/* Features Section */
+.features-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+/* Feature Showcase */
+.feature-showcase {
+  background: rgba(255,255,255,0.98);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  margin: 4rem auto 0;
+  padding: 3rem;
+  max-width: 900px;
+  border: 1px solid rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.feature-list {
+  display: inline-block;
+  text-align: left;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.feature-list-item {
+  font-size: 1.1rem;
+  padding: 0.8rem 1.2rem;
+  background: rgba(15, 23, 42, 0.03);
+  border-radius: 8px;
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 0.75rem;
+  transition: var(--transition);
+}
+
+.feature-list-item:hover {
+  background: rgba(15, 23, 42, 0.06);
+  transform: translateX(5px);
+}
+
+.feature-check {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background: var(--success);
+  color: white;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow);
+}
+
+/* Manage Land Page */
+.manage-land-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.page-title {
+  font-weight: 700;
+  color: var(--dark);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+/* ====== Button Styles ====== */
+/* Connect Wallet Button */
+.wallet-connect-btn {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  box-shadow: 0 4px 15px rgba(78, 84, 200, 0.3);
+  transition: var(--transition);
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  border-radius: 50px;
+}
+
+.wallet-connect-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(78, 84, 200, 0.4);
+}
+
+.btn-pulse-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  border-radius: 50%;
+  transform: scale(0.5);
+  animation: pulse 2s infinite;
+}
+
+/* Action Buttons */
+.action-btn {
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  border: none;
+  background: linear-gradient(135deg, var(--primary), #f8b133);
+  box-shadow: 0 4px 10px rgba(246, 133, 27, 0.2);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+.action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(246, 133, 27, 0.3);
+}
+
+.action-btn.active {
+  background: linear-gradient(135deg, var(--dark), #1e293b);
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
+  color: white;
+}
+
+/* Submit & Verify Buttons */
+.submit-btn, 
+.verify-btn {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: linear-gradient(135deg, var(--success), #5cb85c);
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+  padding: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+}
+
+.submit-btn:hover, 
+.verify-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+/* ====== Animations ====== */
+@keyframes pulse {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { opacity: 0.4; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes ripple {
+  to { transform: scale(2.5); opacity: 0; }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ====== Responsive Adjustments ====== */
+@media (max-width: 992px) {
+  .features-section,
+  .manage-land-page {
+    padding: 4rem 0;
+  }
+  
+  .feature-showcase {
+    padding: 2.5rem;
+    margin-top: 3rem;
+  }
+  
+  .blockchain-visualization {
+    height: 180px;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-card,
+  .land-card {
+    padding: 1.75rem;
+  }
+  
+  .icon-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+  }
+  
+  .feature-showcase {
+    padding: 2rem;
+    border-radius: 16px;
+  }
+  
+  .feature-list {
+    max-width: 100%;
+  }
+  
+  .blockchain-visualization {
+    height: 150px;
+    gap: 15px;
+  }
+  
+  .blockchain-node {
+    width: 25px;
+    height: 25px;
+  }
+
+  .action-btn,
+  .submit-btn, 
+  .verify-btn {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .wallet-connect-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .features-section,
+  .manage-land-page {
+    padding: 3rem 0;
+  }
+  
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+  
+  .feature-list-item {
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    padding-left: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .feature-check {
+    left: 0.75rem;
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+  
+  .blockchain-visualization {
+    height: 120px;
+    gap: 12px;
+  }
+  
+  .blockchain-node {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .blockchain-node::after {
+    width: 15px;
+    right: -15px;
+  }
+}
