@@ -18,7 +18,7 @@ function App() {
       {/* BrowserRouter enables client-side routing in the React application.
           The 'basename' prop is set to "/Gashirai-Final-Year-Project", which
           is useful if the application is deployed to a subdirectory on a server. */}
-      <Router basename="/final-year-project" >
+      <Router basename="/projectUI" >
         {/* Routes is a container for individual Route components. It ensures that
             only one route matches the current URL at a time. */}
         <Routes>
